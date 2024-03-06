@@ -1,0 +1,13 @@
+{{ block title }}Tu elección{{ endblock }} 
+
+{{ block content }}
+<p><strong>Ronda actual: {{ subsession.round_number }} de {{ C.NUM_ROUNDS }}</strong></p>
+<p>
+Usted es el Second Mover (SM). El First Mover (FM) le envió {{ group.sent_amount }} 
+y usted recibió {{ tripled_amount }}. Ahora tienes {{ tripled_amount }}. 
+¿Cuánto le enviará de vuelta al First Mover (FM)?
+<p>
+{{ formfields }}
+{{ next_button }}
+
+{{ include_sibling 'instructions.html' }} {{ endblock }}

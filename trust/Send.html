@@ -1,0 +1,13 @@
+{{ block title }}Tu elección{{ endblock }}
+
+{{ block content }}
+
+<p><strong>Ronda actual: {{ subsession.round_number }} de {{ C.NUM_ROUNDS }}</strong></p>
+
+<p>Usted es el First Mover (FM). Ahora tiene {{ C.ENDOWMENT }}. ¿Cuánto enviará al Second Mover (SM)?</p>
+
+{{ formfields }}
+{{ next_button }}
+
+{{ include_sibling 'instructions.html' }}
+{{ endblock }}

@@ -1,0 +1,34 @@
+{{ block title }}Resultados{{ endblock }}
+{{ block content }}
+
+    {{ if player.id_in_group == 1 }}
+        <p>
+            Como First Mover (FM), elegiste enviar al Second Mover (SM) {{ group.sent_amount }}.
+            El Second Mover (SM) devolvió {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            Inicialmente tenías {{ C.ENDOWMENT }},
+            decidiste enviar {{ group.sent_amount }},
+            recibiste {{ group.sent_back_amount }},
+            por lo tanto ahora tienes:
+            {{ C.ENDOWMENT }} - {{ group.sent_amount }} + {{ group.sent_back_amount }} = <strong>{{ player.payoff }}</strong>
+        </p>
+    {{ else }}
+        <p>
+            Como Second Mover (SM), el First Mover (FM) te envió {{ group.sent_amount }}.
+            Esta cantidad fue triplicada, así que recibiste {{ tripled_amount }}.
+            Elegiste devolver {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            Recibiste {{ tripled_amount }},
+            decidiste devolver {{ group.sent_back_amount }},
+            por lo tanto ahora tienes:
+            {{ C.ENDOWMENT }} + ({{ tripled_amount }} - {{ group.sent_back_amount }}) = <strong>{{ player.payoff }}</strong>
+        </p>
+    {{ endif }}
+
+    <p>{{ next_button }}</p>
+
+    {{ include_sibling 'instructions.html' }}
+
+{{ endblock }}

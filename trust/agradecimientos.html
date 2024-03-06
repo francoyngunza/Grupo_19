@@ -1,0 +1,24 @@
+{{ block title }}
+Agradecimientos
+{{ endblock }}
+
+{% block content %}
+    <p>Pago final:</p>
+    <p>
+        La ronda seleccionada para tu pago final fue la ronda <strong>{{ payoff_round }}</strong>.
+    </p>
+    
+    <p>
+        Basado en esa ronda, tu pago final es de <strong>{{ final_payoff }}</strong>.
+    </p>
+
+    <p>¡Gracias por participar en el juego! Ahora, como último paso, 
+        te pedimos que completes una breve encuesta. 
+        Las respuestas de esta encuesta son importantes para nuestra investigación 
+        y agradecemos tu tiempo y esfuerzo.
+    </p>
+
+    <p>Por favor, haz clic en el botón de abajo para continuar a la encuesta.</p>
+    <p>{{ next_button }}</p>
+
+{% endblock %}

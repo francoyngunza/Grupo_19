@@ -1,0 +1,24 @@
+{{ block title }}Universidad {{ endblock }}
+{{ block content }}
+<div class="card bg-light m-3">
+<div class="card-body">
+
+    
+    {{if player.estado == "Egresado"}}
+    <p>
+        ¿En qué universidad estudió?
+    </p>  
+
+    {{else}}
+
+    <p>
+        ¿En qué universidad está estudiando?
+    </p>  
+
+    {{endif}}
+
+    {{ formfield "Universidad" }}
+
+    {{ next_button }}
+
+{{ endblock }}
